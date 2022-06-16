@@ -1,12 +1,15 @@
 import Link from 'next/link'
+import { useRef } from 'react'
 import Layout from '../components/Layout'
 
 const IndexPage = () => {
 
+  const containerToScroll = useRef<HTMLDivElement>(null)
+
   const handleScroll = (e) => {
     e.preventDefault();
-      // try using useref?
-    e.target.scrollBy({
+    
+    containerToScroll.current.scrollBy({
       left: e.deltaY < 0 ? -30 : 30,
     });
 
@@ -14,7 +17,7 @@ const IndexPage = () => {
 
   return (
     <Layout >
-      <div className='grow min-h-full overflow-x-scroll scrollbar-hide'>
+      <div className='grow min-h-full overflow-x-scroll scrollbar-hide' ref={containerToScroll}>
         <ul className='flex min-h-full gap-10 text-8xl font-extrabold' onWheel={handleScroll}>
           <li className='px-14 flex items-center justify-center hover:text-green-500'>
             <Link href='/'>

@@ -1,13 +1,20 @@
-import React, { ReactNode, useRef } from 'react'
+import React, { ReactNode, useRef, useState } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
+import { motion } from 'framer-motion'
+import { FaGripLines } from 'react-icons/fa'
+import { CgClose } from 'react-icons/cg'
 
 type Props = {
   children?: ReactNode
   title?: string
 }
 
+const MotionLink = motion(Link)
+
 const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
+
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const handleMouseMovement = (e) => {
     if (e.target.tagName == 'A') {
@@ -31,6 +38,31 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
 
   const cursor = useRef<HTMLDivElement>()
 
+  const item = {
+    start: {
+      y: -10,
+      // opacity: 0
+    },
+    end: i => {
+      // console.log(i);
+      return {
+        y: 0,
+        // opacity: 1,
+        transition: {
+          duration: .5,
+          delay: i
+        }
+      }
+    },
+    exit: {
+      y: -10,
+      // opacity: 0
+    },
+    transition: {
+      duration: 1
+    }
+  }
+
   return (
     <div className='min-h-screen flex flex-col' onMouseMove={handleMouseMovement}>
       <Head>
@@ -49,26 +81,56 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
             <a className='uppercase'>Showcase</a>
           </Link>
         </div>
-        <nav className='gap-16 hidden md:flex flex-row-reverse'>
-          <Link href='/'>
+        <button
+          className='lg:hidden flex flex-col justify-center'
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {
+            menuOpen
+              ? <CgClose className='h-5 w-5 text-white z-10' />
+              : <FaGripLines />
+          }
+
+        </button>
+        {/* nav bar --refactor for better animation */}
+        <motion.nav
+          initial={{ backgroundColor: 'transparent' }}
+          animate={{ backgroundColor: menuOpen ? 'black' : '' }}
+          className={`gap-16 text-white text-2xl font-bold absolute top-0 left-0 flex-col h-screen w-screen items-center justify-center ${menuOpen ? 'flex' : 'hidden'} lg:flex lg:static lg:text-black lg:flex-row lg:h-fit lg:w-fit lg:text-base lg:font-medium transition-colors`}
+        >
+          <MotionLink href='/' custom={1} initial='start' animate={menuOpen?'end':'exit'} variants={item} className='transition'>
             <a>Home</a>
-          </Link>
-          <Link href='/'>
+          </MotionLink>
+          <MotionLink href='/' custom={2} initial='start' animate={menuOpen && 'end'} variants={item}>
             <a>Projects</a>
-          </Link>
-          <Link href='/about'>
+          </MotionLink>
+          <MotionLink href='/about' custom={3} initial='start' animate={`${menuOpen && 'end'}`} variants={item}>
             <a>About</a>
-          </Link>
-          <Link href='/'>
+          </MotionLink>
+          <MotionLink href='/' custom={4} initial='start' animate={`${menuOpen && 'end'}`} variants={item}>
             <a>Contact</a>
-          </Link>
-        </nav>
+          </MotionLink>
+        </motion.nav>
       </header>
       <div className='grow flex'>
         {children}
       </div>
       <footer className='px-10 flex justify-end py-8'>
-        <span className='hover:cursor-pointer'>Follow me</span>
+        <span className='hidden md:flex hover:cursor-pointer'>Follow me</span>
+        <ul className='md:hidden flex gap-4 font-semibold'>
+          <li>
+            <a href=''>Ln</a>
+          </li>
+          <li>
+            <a href=''>Ig</a>
+          </li>
+          <li>
+            <a href=''>Yt</a>
+          </li>
+          <li>
+            <a href=''>Gh</a>
+          </li>
+        </ul>
       </footer>
     </div>
   )

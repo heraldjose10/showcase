@@ -10,8 +10,6 @@ type Props = {
   title?: string
 }
 
-const MotionLink = motion(Link)
-
 const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
 
   const [menuOpen, setMenuOpen] = useState(false)
@@ -38,29 +36,36 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
 
   const cursor = useRef<HTMLDivElement>()
 
-  const item = {
-    start: {
-      y: -10,
-      // opacity: 0
-    },
-    end: i => {
-      // console.log(i);
-      return {
-        y: 0,
-        // opacity: 1,
-        transition: {
-          duration: .5,
-          delay: i
-        }
+  const listVariants = {
+    visible: {
+      opacity: 1,
+      'z-index': 0,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.1
       }
     },
-    exit: {
-      y: -10,
-      // opacity: 0
-    },
-    transition: {
-      duration: 1
+    hidden: {
+      opacity: 0,
+      'z-index': -100,
+      transition: {
+        when: "afterChildren"
+      }
     }
+  };
+
+  const itemVarients = {
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: .1
+      }
+    },
+    hidden: {
+      y: -50,
+      opacity: 0
+    },
   }
 
   return (
@@ -70,11 +75,15 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+
+      {/* custom cursor */}
       <div
         className='w-[30px] h-[30px] absolute top-0 left-0 bg-transparent border-4 border-green-400 rounded-full -z-10 transition duration-200'
         ref={cursor}
       >
       </div>
+
+      {/* header */}
       <header className='py-8 px-10 flex justify-between'>
         <div>
           <Link href='/'>
@@ -90,47 +99,66 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
               ? <CgClose className='h-5 w-5 text-white z-10' />
               : <FaGripLines />
           }
-
         </button>
-        {/* nav bar --refactor for better animation */}
-        <motion.nav
-          initial={{ backgroundColor: 'transparent' }}
-          animate={{ backgroundColor: menuOpen ? 'black' : '' }}
-          className={`gap-16 text-white text-2xl font-bold absolute top-0 left-0 flex-col h-screen w-screen items-center justify-center ${menuOpen ? 'flex' : 'hidden'} lg:flex lg:static lg:text-black lg:flex-row lg:h-fit lg:w-fit lg:text-base lg:font-medium transition-colors`}
-        >
-          <MotionLink href='/' custom={1} initial='start' animate={menuOpen?'end':'exit'} variants={item} className='transition'>
+        <nav className={`gap-16 lg:flex hidden`}>
+          <Link href='/'>
             <a>Home</a>
-          </MotionLink>
-          <MotionLink href='/' custom={2} initial='start' animate={menuOpen && 'end'} variants={item}>
+          </Link>
+          <Link href='/'>
             <a>Projects</a>
-          </MotionLink>
-          <MotionLink href='/about' custom={3} initial='start' animate={`${menuOpen && 'end'}`} variants={item}>
+          </Link>
+          <Link href='/about'>
             <a>About</a>
-          </MotionLink>
-          <MotionLink href='/' custom={4} initial='start' animate={`${menuOpen && 'end'}`} variants={item}>
+          </Link>
+          <Link href='/'>
             <a>Contact</a>
-          </MotionLink>
-        </motion.nav>
+          </Link>
+        </nav>
+        {/* https://codesandbox.io/s/simple-framer-motion-animation-with-styled-components-with-children-8nryz?from-embed=&file=/src/components/List/styles.ts */}
+        <motion.ul
+          className={`absolute opacity-0 z-0 top-0 left-0 flex-col items-center justify-center h-screen w-screen bg-black text-white text-3xl gap-10 flex`}
+          animate={menuOpen ? 'visible' : 'hidden'}
+          variants={listVariants}
+        >
+          <motion.li variants={itemVarients}>
+            <Link href='/'>Home</Link>
+          </motion.li>
+          <motion.li variants={itemVarients}>
+            <Link href='/'>Projects</Link>
+          </motion.li>
+          <motion.li variants={itemVarients}>
+            <Link href='/about'>About</Link>
+          </motion.li>
+          <motion.li variants={itemVarients}>
+            <Link href='/'>Contact</Link>
+          </motion.li>
+        </motion.ul>
       </header>
+
+      {/* content */}
       <div className='grow flex'>
         {children}
       </div>
-      <footer className='px-10 flex justify-end py-8'>
-        <span className='hidden md:flex hover:cursor-pointer'>Follow me</span>
-        <ul className='md:hidden flex gap-4 font-semibold'>
-          <li>
-            <a href=''>Ln</a>
-          </li>
-          <li>
-            <a href=''>Ig</a>
-          </li>
-          <li>
-            <a href=''>Yt</a>
-          </li>
-          <li>
-            <a href=''>Gh</a>
-          </li>
-        </ul>
+
+      {/* footer */}
+      <footer className='pr-5 pl-10 flex justify-end py-8 relative min-h-[152px]'>
+        <div className='md:flex hover:cursor-pointer p-8 md:hover:-translate-y-8 md:hover:pt-0 transition group'>
+          <span className='hidden md:flex'>Follow me</span>
+          <ul className='md:hidden flex gap-4 font-semibold md:group-hover:flex md:group-hover:opacity-100 md:absolute md:right-8 md:top-10'>
+            <li>
+              <a href='https://www.linkedin.com/in/herald-olakkengil-5b47491b3/' target='_blank'>Ln</a>
+            </li>
+            <li>
+              <a href='https://www.instagram.com/heraldjos/' target='_blank'>Ig</a>
+            </li>
+            <li>
+              <a href='https://twitter.com/heraldjose10' target='_blank'>Tw</a>
+            </li>
+            <li>
+              <a href='https://github.com/heraldjose10' target='_blank'>Gh</a>
+            </li>
+          </ul>
+        </div>
       </footer>
     </div>
   )

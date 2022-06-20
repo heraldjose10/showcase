@@ -45,6 +45,8 @@ const IndexPage = () => {
         className='grow min-h-full overflow-x-scroll scrollbar-hide transition duration-500'
         ref={containerToScroll}
       >
+        
+        {/* main sections */}
         <ul
           className='flex min-h-full lg:gap-10 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold'
           onWheel={handleScroll}
@@ -78,6 +80,7 @@ const IndexPage = () => {
             </Link>
           </li>
         </ul>
+        
       </div>
     </Layout>
   )

@@ -110,7 +110,7 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
           <Link href='/about'>
             <a>About</a>
           </Link>
-          <Link href='/'>
+          <Link href='/contact'>
             <a>Contact</a>
           </Link>
         </nav>
@@ -130,7 +130,7 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
             <Link href='/about'>About</Link>
           </motion.li>
           <motion.li variants={itemVarients}>
-            <Link href='/'>Contact</Link>
+            <Link href='/contact'>Contact</Link>
           </motion.li>
         </motion.ul>
       </header>

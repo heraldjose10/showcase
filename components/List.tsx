@@ -1,18 +1,17 @@
 import * as React from 'react'
-import ListItem from './ListItem'
-import { User } from '../interfaces'
+import { Item } from '../interfaces'
 
 type Props = {
-  items: User[]
+  items: Item[]
 }
 
 const List = ({ items }: Props) => (
-  <ul>
-    {items.map((item) => (
-      <li key={item.id}>
-        <ListItem data={item} />
-      </li>
-    ))}
+  <ul className='flex flex-col gap-2 mb-8'>
+    {
+      items.map(item => (
+        <p key={item.id}>{item.name}</p>
+      ))
+    }
   </ul>
 )
 

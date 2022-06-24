@@ -7,7 +7,17 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        reveal: {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' }
+        }
+      },
+      animation: {
+        'grand-reveal': 'reveal cubic-bezier(.58,.31,.12,.97) 1s'
+      }
+    },
   },
   plugins: [
     plugin(function ({ addUtilities }) {

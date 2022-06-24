@@ -7,7 +7,7 @@ type Props = {
 const ResumeExperienceCard = ({ experience }: Props) => {
     return (
         <div>
-            <h4 className="text-2xl font-serif">
+            <h4 className="text-xl md:text-2xl font-serif">
                 <span className="font-semibold">{experience.title + ', '} </span>
                 <span>{experience.place + ' — '}</span>
                 <span className="italic">{experience.role}</span>

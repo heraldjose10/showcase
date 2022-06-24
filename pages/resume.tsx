@@ -10,12 +10,12 @@ const Resume = () => {
 
     return (
         <Layout>
-            <div className='flex gap-20 w-[1150px] grow-0 mx-auto mt-[100px] px-10'>
+            <div className='flex flex-col md:flex-row gap-10 md:gap-20 w-[1150px] grow-0 mx-auto mt-[100px] px-8'>
                 {/* left */}
                 <div className='basis-4/6'>
                     {/* intro section */}
-                    <div className='min-h-[200px]'>
-                        <h1 className='text-7xl font-semibold mb-4 font-serif'>Herald J Olakkengil</h1>
+                    <div className='min-h-[200px] mb-5'>
+                        <h1 className='text-6xl lg:text-7xl font-semibold mb-4 font-serif'>Herald J Olakkengil</h1>
                         <p>
                             Self motivated professional, excited to learn new technologies and explore multicultural collaboration. A fellow human being with passion for creating things out of scratch.
                         </p>
@@ -61,7 +61,7 @@ const Resume = () => {
                 {/* right */}
                 <div className='basis-2/6'>
                     {/* top right contact info */}
-                    <div className='flex flex-col min-h-[200px]'>
+                    <div className='md:flex flex-col min-h-[200px] mb-5 hidden'>
                         <address>
                             Olakkengil House<br />
                             Pavaratty, Kerala, India<br />

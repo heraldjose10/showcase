@@ -7,7 +7,7 @@ type Props = {
 const ResumeProjectCard = ({ project }: Props) => {
     return (
         <div>
-            <h4 className="font-semibold text-2xl font-serif">{project.title}</h4>
+            <h4 className="text-xl font-semibold md:text-2xl font-serif">{project.title}</h4>
             <p>{project.summary}</p>
         </div>
     )

@@ -18,16 +18,16 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
     if (e.target.tagName == 'A') {
       cursor.current.style.height = '60px'
       cursor.current.style.width = '60px'
-      cursor.current.style.left = `${e.clientX - 30}px`
-      cursor.current.style.top = `${e.clientY - 30}px`
+      cursor.current.style.left = `${e.pageX - 30}px`
+      cursor.current.style.top = `${e.pageY - 30}px`
       cursor.current.style.border = 'None'
       cursor.current.style.backgroundColor = '#7be1a0'
     }
     else {
       cursor.current.style.height = '30px'
       cursor.current.style.width = '30px'
-      cursor.current.style.left = `${e.clientX - 10}px`
-      cursor.current.style.top = `${e.clientY - 10}px`
+      cursor.current.style.left = `${e.pageX - 10}px`
+      cursor.current.style.top = `${e.pageY - 10}px`
       cursor.current.style.border = 'solid'
       cursor.current.style.borderColor = '#4ade80'
       cursor.current.style.backgroundColor = 'transparent'

@@ -1,4 +1,4 @@
-import { Education, Experience, Item, Project } from '../interfaces'
+import { Education, Experience, Item, PersonalProject, Project } from '../interfaces'
 
 export const skills: Item[] = [
     { id: 1, name: 'Python Programming' },
@@ -42,4 +42,34 @@ export const experiences: Experience[] = [
             'Develop and maintain Python scripts to manipulate data in Excel and CSV files.'
         ]
     }
+]
+
+export const personalProjects: PersonalProject[] = [
+    {
+        id: 1, 
+        title: 'Nike India Clone',
+        summary: 'A fullstack clone of the Nike India shopping website made using React frontend and Flask backend. Integrated with PayTM payments gateway.',
+        home_page: '/projects/nike_home.png'
+    },
+    {
+        id: 2,
+        title: 'StoryTell',
+        summary: 'A webapp for light blogging. This webapp was made using Flask framework. Authors can sign and start writing their blogs through a WYSIWYG text editor.',
+        home_page: '/projects/storytell_home.png'
+    },
+    {
+        id: 3,
+        title: 'Spotify Clone',
+        summary: 'A clone of the Spotify web player with music playback, search feature, playlists, albums and liked songs. I used the Spotify API for data.',
+        home_page: '/projects/spotify_clone_home.png'
+    },
+    // add shopping website
+    // add data visualization
+    // add nike data
+    // {
+    //     id: 4,
+    //     title: 'Data Visualisatoin',
+    //     summary: 'A clone of the Spotify web player with music playback, search feature, playlists, albums and liked songs. I used the Spotify API for data.',
+    //     home_page: '/projects/spotify_clone_home.png'
+    // }
 ]

@@ -14,7 +14,7 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
 
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const handleMouseMovement = (e) => {
+  const handleMouseMovement = (e) => {    
     if (e.target.tagName == 'A') {
       cursor.current.style.height = '60px'
       cursor.current.style.width = '60px'
@@ -39,7 +39,7 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
   const listVariants = {
     visible: {
       opacity: 1,
-      'z-index': 0,
+      'z-index': 10,
       transition: {
         when: "beforeChildren",
         staggerChildren: 0.1
@@ -84,7 +84,7 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
       </div>
 
       {/* header */}
-      <header className='py-8 px-10 flex justify-between'>
+      <header className='px-5 py-8 sm:px-10 flex justify-between'>
         <div>
           <Link href='/'>
             <a className='uppercase'>Showcase</a>
@@ -96,7 +96,7 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
         >
           {
             menuOpen
-              ? <CgClose className='h-5 w-5 text-white z-10' />
+              ? <CgClose className='h-5 w-5 text-white z-20' />
               : <FaGripLines />
           }
         </button>
@@ -116,7 +116,7 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
         </nav>
         {/* https://codesandbox.io/s/simple-framer-motion-animation-with-styled-components-with-children-8nryz?from-embed=&file=/src/components/List/styles.ts */}
         <motion.ul
-          className={`absolute opacity-0 z-0 top-0 left-0 flex-col items-center justify-center h-screen w-screen bg-black text-white text-3xl gap-10 flex`}
+          className={`absolute opacity-0 z-0 top-0 left-0 flex-col items-center justify-center h-screen w-[100vw] bg-black text-white text-3xl gap-10 flex lg:hidden`}
           animate={menuOpen ? 'visible' : 'hidden'}
           variants={listVariants}
         >
@@ -142,7 +142,7 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
 
       {/* footer */}
       <footer className='pr-5 pl-10 flex justify-end py-8 relative min-h-[152px]'>
-        <div className='md:flex hover:cursor-pointer p-8 md:hover:-translate-y-8 md:hover:pt-0 transition group'>
+        <div className='md:flex hover:cursor-pointer p-8 pr-0 sm:pr-8 md:hover:-translate-y-8 md:hover:pt-0 transition group'>
           <span className='hidden md:flex'>Follow me</span>
           <ul className='md:hidden flex gap-4 font-semibold md:group-hover:flex md:group-hover:opacity-100 md:absolute md:right-8 md:top-10'>
             <li>

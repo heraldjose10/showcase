@@ -67,8 +67,8 @@ const Resume = () => {
                             Pavaratty, Kerala, India<br />
                         </address>
                         <span className='font-semibold'>+91 8330030572</span>
-                        <a href='mailto:heraldjose10@gmail.com' className='text-green-800 underline'>heraldjose10@gmail.com</a>
-                        <a href='https://github.com/heraldjose10' className='text-green-800 underline'>github.com/heraldjose10</a>
+                        <a href='mailto:heraldjose10@gmail.com' className='text-green-800 underline w-fit'>heraldjose10@gmail.com</a>
+                        <a href='https://github.com/heraldjose10' className='text-green-800 underline w-fit'>github.com/heraldjose10</a>
                     </div>
 
                     <div className='flex flex-col gap-10'>

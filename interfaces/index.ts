@@ -31,3 +31,7 @@ export type Experience = {
   responsibilities: string[],
   duration: string
 }
+
+export type PersonalProject = Project & {
+  home_page: string
+}

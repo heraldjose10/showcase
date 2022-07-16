@@ -46,22 +46,25 @@ export const experiences: Experience[] = [
 
 export const personalProjects: PersonalProject[] = [
     {
-        id: 1, 
+        id: 1,
         title: 'Nike India Clone',
         summary: 'A fullstack clone of the Nike India shopping website made using React frontend and Flask backend. Integrated with PayTM payments gateway.',
-        home_page: '/projects/nike_home.png'
+        home_page: '/projects/nike_home.png',
+        slug: 'nike-india-clone'
     },
     {
         id: 2,
         title: 'StoryTell',
         summary: 'A webapp for light blogging. This webapp was made using Flask framework. Authors can sign and start writing their blogs through a WYSIWYG text editor.',
-        home_page: '/projects/storytell_home.png'
+        home_page: '/projects/storytell_home.png',
+        slug: 'storytell'
     },
     {
         id: 3,
         title: 'Spotify Clone',
         summary: 'A clone of the Spotify web player with music playback, search feature, playlists, albums and liked songs. I used the Spotify API for data.',
-        home_page: '/projects/spotify_clone_home.png'
+        home_page: '/projects/spotify_clone_home.png',
+        slug: 'spotify-clone'
     },
     // add shopping website
     // add data visualization

@@ -104,7 +104,7 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
           <Link href='/'>
             <a>Home</a>
           </Link>
-          <Link href='/'>
+          <Link href='/projects'>
             <a>Projects</a>
           </Link>
           <Link href='/about'>
@@ -124,7 +124,7 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
             <Link href='/'>Home</Link>
           </motion.li>
           <motion.li variants={itemVarients}>
-            <Link href='/'>Projects</Link>
+            <Link href='/projects'>Projects</Link>
           </motion.li>
           <motion.li variants={itemVarients}>
             <Link href='/about'>About</Link>

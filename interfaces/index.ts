@@ -33,5 +33,13 @@ export type Experience = {
 }
 
 export type PersonalProject = Project & {
-  home_page: string
+  home_page: string,
+  slug: string
+}
+
+export type ProjectDetail = PersonalProject & {
+  images: string[],
+  tags: string[],
+  challenges: string[],
+  learnings: string[]
 }

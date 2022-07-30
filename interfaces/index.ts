@@ -38,8 +38,15 @@ export type PersonalProject = Project & {
 }
 
 export type ProjectDetail = PersonalProject & {
-  images: string[],
+  images: Image[],
   tags: string[],
   challenges: string[],
   learnings: string[]
+}
+
+export type Image = {
+  link: string,
+  alt: string,
+  height: number,
+  width: number
 }

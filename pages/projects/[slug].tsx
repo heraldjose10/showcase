@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import PrevArrow from "../../components/PrevArrow"
 import NextArrow from "../../components/NextArrow"
+import MasonryLayout from "../../components/MasonryLayout"
 
 const Project = () => {
     const { query } = useRouter()
@@ -31,7 +32,7 @@ const Project = () => {
 
         customPaging: (i) => (
             <a>
-                <img src={project.images[i]} />
+                <img src={project.images[i].link} />
             </a>
         )
     };
@@ -42,15 +43,18 @@ const Project = () => {
                 project
                     ? (
                         <div className="px-5 sm:px-10 py-16 flex-col flex gap-10 items-center w-full">
-                            <h1 className="text-left w-full text-5xl font-extrabold md:text-7xl lg:text-8xl">{project.title}</h1>
+                            <h1 className="text-left w-full text-5xl font-extrabold md:text-7xl lg:text-8xl">
+                                {project.title}
+                            </h1>
+
                             <div className="w-[88vw] py-10 sm:hidden">
                                 <Slider {...settings}>
                                     {
-                                        project.images.map(image => (
-                                            <div className="w-full">
+                                        project.images.map((image, index) => (
+                                            <div className="w-full" key={index}>
                                                 <Image
-                                                    src={image}
-                                                    alt="storytell screenshot"
+                                                    src={image.link}
+                                                    alt={image.alt}
                                                     height='120'
                                                     width='100'
                                                     layout="responsive"
@@ -61,6 +65,7 @@ const Project = () => {
                                     }
                                 </Slider>
                             </div>
+
                             <section className="w-full mt-10">
                                 <h2 className="text-3xl font-semibold py-5">Challenges</h2>
                                 <ul className="list-disc list-inside">
@@ -71,6 +76,7 @@ const Project = () => {
                                     }
                                 </ul>
                             </section>
+
                             <section className="w-full">
                                 <h2 className="text-3xl font-semibold py-5">Take Aways</h2>
                                 <ul className="list-disc list-inside">
@@ -81,6 +87,24 @@ const Project = () => {
                                     }
                                 </ul>
                             </section>
+
+                            <MasonryLayout columns={3} gap={50}>
+                                {
+                                    project.images.map((image, index) => (
+                                        <Image
+                                            key={index}
+                                            src={image.link}
+                                            alt={image.alt}
+                                            placeholder='blur'
+                                            blurDataURL={image.link}
+                                            layout="intrinsic"
+                                            width={image.width / 3}
+                                            height={image.height / 3}
+                                            className="hover:cursor-pointer"
+                                        />
+                                    ))
+                                }
+                            </MasonryLayout>
                         </div>
                     )
                     : <p>loading....</p> // create a good loading animation

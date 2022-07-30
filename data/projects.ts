@@ -12,13 +12,49 @@ export const ProjectDetails: ProjectDetail[] = [
             'Integrating PayTM payments gateway. The documentation was limited for backend gateway integration.'
         ],
         images: [
-            '/projects/nike_home.png',
-            '/projects/nike_home_1.png',
-            '/projects/nike_home_mobile.png',
-            '/projects/nike_login.png',
-            '/projects/nike_product.png',
-            '/projects/nike_products.png',
-            '/projects/nike_products_long.png',
+            {
+                link: '/projects/nike_home.png',
+                alt: 'nike home screenshot',
+                height: 800,
+                width: 1920
+            },
+            {
+                link: '/projects/nike_home_1.png',
+                alt: 'nike home screenshot',
+                height: 1512,
+                width: 2048
+            },
+            {
+                link: '/projects/nike_products.png',
+                alt: 'nike products page',
+                height: 1512,
+                width: 640
+            },
+            {
+                link: '/projects/nike_home_mobile.png',
+                alt: 'nike home from mobile display',
+                height: 5718,
+                width: 2048
+            },
+            {
+                link: '/projects/nike_product.png',
+                alt: 'nike product page',
+                height: 3540,
+                width: 2048
+            },
+            {
+                link: '/projects/nike_products_long.png',
+                alt: 'nike products page scrolled down',
+                height: 6738,
+                width: 2048
+            },
+            {
+                link: '/projects/nike_login.png',
+                alt: 'nike login screen',
+                height: 2902,
+                width: 2048
+            },
+
         ],
         learnings: [
             'Used PayTM payments gateway to checkout users',
@@ -38,13 +74,48 @@ export const ProjectDetails: ProjectDetail[] = [
             'Resizing and storing thumbnails. I could set up a S3 bucket to store the thumbnails after resizing at client side'
         ],
         images: [
-            '/projects/storytell_blog_page.jpeg',
-            '/projects/storytell_homepage.jpeg',
-            '/projects/storytell_iphone_home.jpeg',
-            '/projects/storytell_login.jpeg',
-            '/projects/storytell_profile.jpeg',
-            '/projects/storytell_update_blog.jpeg',
-            '/projects/storytell_write_blog.jpeg',
+            {
+                link: '/projects/storytell_blog_page.jpeg',
+                alt: 'storytell blog page',
+                height: 909,
+                width: 1918
+            },
+            {
+                link: '/projects/storytell_homepage.jpeg',
+                alt: 'storytell home page',
+                height: 800,
+                width: 1920
+            },
+            {
+                link: '/projects/storytell_iphone_home.jpeg',
+                alt: 'storytell home page from iphone',
+                height: 2436,
+                width: 1125
+            },
+            {
+                link: '/projects/storytell_login.jpeg',
+                alt: 'storytell login page',
+                height: 907,
+                width: 1915
+            },
+            {
+                link: '/projects/storytell_profile.jpeg',
+                alt: 'storytell profile page',
+                height: 4398,
+                width: 1125
+            },
+            {
+                link: '/projects/storytell_update_blog.jpeg',
+                alt: 'storytell update blog page',
+                height: 2182,
+                width: 2880
+            },
+            {
+                link: '/projects/storytell_write_blog.jpeg',
+                alt: '',
+                height: 3206,
+                width: 2048
+            }
         ],
         learnings: [
             'Database modelling using Flask-SQLAlchemy',
@@ -64,11 +135,37 @@ export const ProjectDetails: ProjectDetail[] = [
             'Integrating music playback using 3rd party component'
         ],
         images: [
-            '/projects/spotify_clone_home.png',
-            '/projects/spotify_clone_library.png',
-            '/projects/spotify_clone_playlist.png',
-            '/projects/spotify_clone_liked.png',
-            '/projects/spotify_clone_search.png'
+            {
+                link: '/projects/spotify_clone_home.png',
+                alt: 'spotify clone home page',
+                height: 800,
+                width: 1980
+            },
+            {
+                link: '/projects/spotify_clone_library.png',
+                alt: 'spotify clone library',
+                height: 1080,
+                width: 1920
+            },
+            {
+                link: '/projects/spotify_clone_search.png',
+                alt: 'spotify clone search page',
+                height: 800,
+                width: 1430
+            },
+            {
+                link: '/projects/spotify_clone_liked.png',
+                alt: 'spotify clone liked songs page',
+                height: 800,
+                width: 1216
+            },
+            {
+                link: '/projects/spotify_clone_playlist.png',
+                alt: 'spotify clone playlists page',
+                height: 800,
+                width: 440
+            },
+            
         ],
         learnings: [
             'Used a 3rd party API. The awesome documentation by Spotify helped a lot',

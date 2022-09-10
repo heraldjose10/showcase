@@ -136,7 +136,7 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
       </header>
 
       {/* content */}
-      <div className='grow flex'>
+      <div className='grow flex justify-center'>
         {children}
       </div>
 

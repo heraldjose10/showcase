@@ -45,7 +45,7 @@ const IndexPage = () => {
         className='grow min-h-full overflow-x-scroll scrollbar-hide transition duration-500'
         ref={containerToScroll}
       >
-        
+
         {/* main sections */}
         <ul
           className='flex min-h-full lg:gap-10 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold'
@@ -60,7 +60,7 @@ const IndexPage = () => {
             </Link>
           </li>
           <li className='px-4 md:px-10 lg:px-14 flex items-center justify-center hover:text-green-500'>
-            <Link href='/'>
+            <Link href='/blogs'>
               <a>Blogs</a>
             </Link>
           </li>
@@ -80,7 +80,7 @@ const IndexPage = () => {
             </Link>
           </li>
         </ul>
-        
+
       </div>
     </Layout>
   )

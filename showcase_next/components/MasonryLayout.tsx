@@ -30,7 +30,7 @@ const MasonryLayout = ({ columns, gap, children }: Props) => {
         );
     }
     return (
-        <div className={`flex gap-[${gap}px] w-[70vw]`}>
+        <div className={`gap-[${gap}px] w-[70vw] hidden sm:flex`}>
             {result}
         </div>
     );

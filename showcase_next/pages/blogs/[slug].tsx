@@ -15,7 +15,7 @@ const BlogPage = ({ blog }) => {
                     <p>{moment(blog.attributes.published_at).format('MMMM Do YYYY')}</p>
                     <p className='italic'>{blog.attributes.description}</p>
                 </div>
-                <ReactMarkdown children={blog.attributes.content} />
+                <ReactMarkdown className='unreset' children={blog.attributes.content} />
             </article>
         </Layout>
     )

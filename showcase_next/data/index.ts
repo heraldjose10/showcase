@@ -36,7 +36,7 @@ export const experiences: Experience[] = [
         title: 'Tata Consultancy Services',
         place: 'Kochi',
         role: 'Technical Faculty',
-        duration: 'JULY 2021 - PRESENT',
+        duration: 'JULY 2021 - SEPTEMBER 2022',
         responsibilities: [
             'Deliver webinars and sessions on Python, Web development and SQL.',
             'Develop and maintain Python scripts to manipulate data in Excel and CSV files.'

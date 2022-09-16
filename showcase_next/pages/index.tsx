@@ -75,7 +75,7 @@ const IndexPage = () => {
             </Link>
           </li>
           <li className='px-4 md:px-10 lg:px-14 flex items-center justify-center hover:text-green-500'>
-            <Link href='/'>
+            <Link href='/gallery'>
               <a className='whitespace-nowrap'>Photo Gallery</a>
             </Link>
           </li>

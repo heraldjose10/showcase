@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import { useSwipeable } from 'react-swipeable'
 import Layout from '../components/Layout'
@@ -39,49 +40,84 @@ const IndexPage = () => {
     containerToSwipe.current = el;
   }
 
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.2
+      }
+    }
+  }
+
+  const item = {
+    hidden: { scale: 0 },
+    show: { scale: 1 }
+  }
+
   return (
     <Layout >
-      <div
+      <motion.div
         className='grow min-h-full overflow-x-scroll scrollbar-hide transition duration-500'
         ref={containerToScroll}
+        transition={{ times: [0, 1], ease: 'easeOut' }}
+        exit={{ opacity: 0, y: 5000, scale: 0 }}
       >
 
         {/* main sections */}
-        <ul
+        <motion.ul
+          variants={container}
+          initial='hidden'
+          animate='show'
           className='flex min-h-full lg:gap-10 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold'
           onWheel={handleScroll}
           {...swipeHandlers}
           ref={refPassthrough}
 
         >
-          <li className='px-4 md:px-10 lg:px-14 flex items-center justify-center hover:text-green-500'>
+          <motion.li
+            variants={item}
+            className='px-4 md:px-10 lg:px-14 flex items-center justify-center hover:text-green-500'
+          >
             <Link href='/projects'>
               <a>Projects</a>
             </Link>
-          </li>
-          <li className='px-4 md:px-10 lg:px-14 flex items-center justify-center hover:text-green-500'>
+          </motion.li>
+          <motion.li
+            variants={item}
+            className='px-4 md:px-10 lg:px-14 flex items-center justify-center hover:text-green-500'
+          >
             <Link href='/blogs'>
               <a>Blogs</a>
             </Link>
-          </li>
-          <li className='px-4 md:px-10 lg:px-14 flex items-center justify-center hover:text-green-500'>
+          </motion.li>
+          <motion.li
+            variants={item}
+            className='px-4 md:px-10 lg:px-14 flex items-center justify-center hover:text-green-500'
+          >
             <Link href='/resume'>
               <a>Resume</a>
             </Link>
-          </li>
-          <li className='px-4 md:px-10 lg:px-14 flex items-center justify-center hover:text-green-500'>
+          </motion.li>
+          <motion.li
+            variants={item}
+            className='px-4 md:px-10 lg:px-14 flex items-center justify-center hover:text-green-500'
+          >
             <Link href='/'>
               <a>Education</a>
             </Link>
-          </li>
-          <li className='px-4 md:px-10 lg:px-14 flex items-center justify-center hover:text-green-500'>
+          </motion.li>
+          <motion.li
+            variants={item}
+            className='px-4 md:px-10 lg:px-14 flex items-center justify-center hover:text-green-500'
+          >
             <Link href='/gallery'>
               <a className='whitespace-nowrap'>Photo Gallery</a>
             </Link>
-          </li>
-        </ul>
-
-      </div>
+          </motion.li>
+        </motion.ul>
+      </motion.div>
     </Layout>
   )
 }

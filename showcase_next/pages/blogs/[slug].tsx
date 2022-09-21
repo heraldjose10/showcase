@@ -1,4 +1,5 @@
 import moment from 'moment'
+import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import Layout from "../../components/Layout"
 import { fetchAPI } from "../../lib/api"
@@ -7,7 +8,16 @@ const BlogPage = ({ blog }) => {
 
     return (
         <Layout>
-            <article className='max-w-2xl mx-5 my-8 '>
+            <motion.article
+                initial={{ opacity: 0, y: '100vh' }}
+                animate={{
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: .6 }
+                }}
+                exit={{ opacity: 0 }}
+                className='max-w-2xl mx-5 my-8'
+            >
                 <h1 className='text-5xl font-bold my-5'>
                     {blog.attributes.title}
                 </h1>
@@ -16,7 +26,7 @@ const BlogPage = ({ blog }) => {
                     <p className='italic'>{blog.attributes.description}</p>
                 </div>
                 <ReactMarkdown className='unreset' children={blog.attributes.content} />
-            </article>
+            </motion.article>
         </Layout>
     )
 }

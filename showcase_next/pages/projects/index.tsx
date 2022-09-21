@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { AnimatePresence, motion } from "framer-motion"
 import Layout from "../../components/Layout"
 
 import { personalProjects } from "../../data"
@@ -9,7 +10,13 @@ import { ProjectCard } from "../../components/ProjectCard"
 const Projects = () => {
     return (
         <Layout>
-            <div className="flex flex-col px-5 sm:px-10 py-16 gap-20 lg:flex-row lg:flex-wrap justify-center">
+            <motion.div
+                initial={{ opacity: 0, y: '100%' }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: '100%' }}
+                transition={{ duration: .5 }}
+                className="flex flex-col px-5 sm:px-10 py-16 gap-20 lg:flex-row lg:flex-wrap justify-center"
+            >
                 {
                     personalProjects.map(project => (
                         <Link
@@ -27,7 +34,7 @@ const Projects = () => {
                         </Link>
                     ))
                 }
-            </div>
+            </motion.div>
         </Layout>
     )
 }

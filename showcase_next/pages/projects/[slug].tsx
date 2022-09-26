@@ -1,4 +1,5 @@
 import React from "react"
+import { motion } from "framer-motion"
 import { useRouter } from "next/router"
 import Slider from "react-slick"
 import Image from "next/image"
@@ -42,7 +43,12 @@ const Project = () => {
             {
                 project
                     ? (
-                        <div className="px-5 sm:px-10 py-16 flex-col flex gap-10 items-center w-full">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="px-5 sm:px-10 py-16 flex-col flex gap-10 items-center w-full"
+                        >
                             <h1 className="text-left w-full text-5xl font-extrabold md:text-7xl lg:text-8xl">
                                 {project.title}
                             </h1>
@@ -105,7 +111,7 @@ const Project = () => {
                                     ))
                                 }
                             </MasonryLayout>
-                        </div>
+                        </motion.div>
                     )
                     : <p>loading....</p> // create a good loading animation
             }

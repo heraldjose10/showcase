@@ -1,16 +1,48 @@
 import Image from "next/image";
+import { motion } from 'framer-motion'
 import Layout from "../../components/Layout"
 import { fetchAPI } from "../../lib/api"
 
 const Gallery = ({ images }) => {
 
+    const container = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15,
+            }
+        },
+        exit: {
+            opacity: 0
+        }
+    }
+
+    const item = {
+        hidden: {
+            y: '-100px',
+            opacity: 0
+        },
+        show: {
+            y: 0,
+            opacity: 1
+        }
+    }
+
     return (
         <Layout>
-            <div className="flex flex-wrap gap-2 justify-center content-start my-auto py-10 w-full max-w-[900px] md:gap-3">
+            <motion.div
+                variants={container}
+                initial='hidden'
+                animate='show'
+                exit='exit'
+                className="flex flex-wrap gap-2 justify-center content-start my-auto py-10 w-full max-w-[900px] md:gap-3"
+            >
                 {
                     images.map(image => {
                         return (
-                            <div
+                            <motion.div
+                                variants={item}
                                 className="relative w-[calc(50vw-4px)] h-[calc(50vw-4px)] md:w-[270px] md:h-[270px] md:border-black md:border-2"
                                 key={image.id}
                             >
@@ -23,11 +55,11 @@ const Gallery = ({ images }) => {
                                     className="object-contain"
                                     key={image.id}
                                 />
-                            </div>
+                            </motion.div>
                         )
                     })
                 }
-            </div>
+            </motion.div>
         </Layout>
     )
 }

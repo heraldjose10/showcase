@@ -1,4 +1,5 @@
 import Layout from '../components/Layout'
+import { motion } from 'framer-motion';
 import List from '../components/List';
 import ResumeEducationCard from '../components/ResumeEducationCard';
 import ResumeExperienceCard from '../components/ResumeExperienceCard';
@@ -10,7 +11,12 @@ const Resume = () => {
 
     return (
         <Layout>
-            <div className='flex flex-col md:flex-row gap-10 md:gap-20 w-[1150px] grow-0 mx-auto mt-[100px] px-8'>
+            <motion.div
+                initial={{ opacity: 0, y: '200px' }}
+                animate={{ opacity: 1, y: '0px' }}
+                exit={{ opacity: 0, y: '200px' }}
+                className='flex flex-col md:flex-row gap-10 md:gap-20 w-[1150px] grow-0 mx-auto mt-[100px] px-8'
+            >
                 {/* left */}
                 <div className='basis-4/6'>
                     {/* intro section */}
@@ -83,7 +89,7 @@ const Resume = () => {
                         </ResumeSection>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </Layout>
     )
 }

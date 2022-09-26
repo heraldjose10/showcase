@@ -20,7 +20,7 @@ const BlogsPage = ({ blogs }) => {
     }
 
     const item = {
-        hidden: { x: '-100vw' },
+        hidden: { x: '-100px' },
         show: { x: 0 }
     }
 

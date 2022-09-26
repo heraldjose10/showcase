@@ -50,3 +50,11 @@ export type Image = {
   height: number,
   width: number
 }
+
+export type EducationPage = {
+  name: string,
+  degree: string,
+  start: string,
+  end: string,
+  image: string
+}

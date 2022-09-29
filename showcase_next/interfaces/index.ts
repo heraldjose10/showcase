@@ -52,6 +52,7 @@ export type Image = {
 }
 
 export type EducationPage = {
+  id: number,
   name: string,
   degree: string,
   start: string,

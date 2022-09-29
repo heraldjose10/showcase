@@ -54,8 +54,6 @@ const Education = () => {
                         <>
                             <motion.div
                                 onClick={() => {
-                                    console.log('clicked');
-
                                     setSelected(true)
                                     setSelectedId(edu.id)
                                 }}

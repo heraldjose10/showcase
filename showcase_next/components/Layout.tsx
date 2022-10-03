@@ -72,6 +72,7 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
     <div className={`min-h-screen flex flex-col ${menuOpen?'max-h-[100vh] overflow-hidden':''}`} onMouseMove={handleMouseMovement}>
       <Head>
         <title>{title}</title>
+        <link rel="icon" href="favicon.ico" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>

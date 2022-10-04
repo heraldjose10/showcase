@@ -48,8 +48,7 @@ const Gallery = ({ images }) => {
                             >
                                 <Image
                                     src={
-                                        process.env.NEXT_PUBLIC_STRAPI_API_URL +
-                                        (image.attributes.image.data.attributes.formats.medium ? image.attributes.image.data.attributes.formats.medium.url : image.attributes.image.data.attributes.formats.small.url)
+                                        image.attributes.image.data.attributes.formats.medium ? image.attributes.image.data.attributes.formats.medium.url : image.attributes.image.data.attributes.formats.small.url
                                     }
                                     layout='fill'
                                     className="object-contain"

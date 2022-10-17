@@ -21,8 +21,8 @@ const Resume = () => {
                 <div className='basis-4/6'>
                     {/* intro section */}
                     <div className='min-h-[200px] mb-5'>
-                        <h1 className='text-6xl lg:text-7xl font-semibold mb-4 font-serif'>Herald J Olakkengil</h1>
-                        <p>
+                        <h1 className='text-6xl lg:text-7xl font-semibold mb-4 font-DMSerif'>Herald J Olakkengil</h1>
+                        <p className='font-Noto'>
                             Self motivated professional, excited to learn new technologies and explore multicultural collaboration. A fellow human being with passion for creating things out of scratch.
                         </p>
                     </div>
@@ -67,7 +67,7 @@ const Resume = () => {
                 {/* right */}
                 <div className='basis-2/6'>
                     {/* top right contact info */}
-                    <div className='md:flex flex-col min-h-[200px] mb-5 hidden'>
+                    <div className='md:flex flex-col min-h-[200px] mb-5 hidden font-Noto'>
                         <address>
                             Olakkengil House<br />
                             Pavaratty, Kerala, India<br />

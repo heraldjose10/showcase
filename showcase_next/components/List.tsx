@@ -6,7 +6,7 @@ type Props = {
 }
 
 const List = ({ items }: Props) => (
-  <ul className='flex flex-col gap-2 list-inside list-disc'>
+  <ul className='flex flex-col gap-2 list-inside list-disc font-Noto'>
     {
       items.map(item => (
         <li key={item.id}>{item.name}</li>

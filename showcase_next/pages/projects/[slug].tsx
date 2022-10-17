@@ -49,7 +49,7 @@ const Project = () => {
                             exit={{ opacity: 0 }}
                             className="px-5 sm:px-10 py-16 flex-col flex gap-10 items-center w-full"
                         >
-                            <h1 className="text-left w-full text-5xl font-extrabold md:text-7xl lg:text-8xl">
+                            <h1 className="font-Fjalla text-left w-full text-5xl font-extrabold md:text-7xl lg:text-8xl">
                                 {project.title}
                             </h1>
 
@@ -72,7 +72,7 @@ const Project = () => {
                                 </Slider>
                             </div>
 
-                            <section className="w-full mt-10">
+                            <section className="w-full mt-10 font-Noto">
                                 <h2 className="text-3xl font-semibold py-5">Challenges</h2>
                                 <ul className="list-disc list-inside">
                                     {
@@ -83,7 +83,7 @@ const Project = () => {
                                 </ul>
                             </section>
 
-                            <section className="w-full">
+                            <section className="w-full font-Noto">
                                 <h2 className="text-3xl font-semibold py-5">Take Aways</h2>
                                 <ul className="list-disc list-inside">
                                     {

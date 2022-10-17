@@ -7,12 +7,12 @@ type Props = {
 const ResumeEducationCard = ({ education }: Props) => {
     return (
         <div>
-            <h4 className="text-xl md:text-2xl font-serif">
+            <h4 className="text-xl md:text-2xl font-DMSerif">
                 <span className="font-semibold">{education.college + ', '}</span>
                 <span>{education.place}</span>
             </h4>
-            <p className="text-sm ">{education.duration}</p>
-            <p>{education.summary}</p>
+            <p className="text-sm font-Noto">{education.duration}</p>
+            <p className="font-Noto">{education.summary}</p>
         </div>
     )
 }

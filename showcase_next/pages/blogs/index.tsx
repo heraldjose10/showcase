@@ -38,7 +38,7 @@ const BlogsPage = ({ blogs }) => {
                         <motion.li
                             variants={item}
                             key={blog.id}
-                            className='my-5 cursor-pointer'
+                            className='my-5 cursor-pointer font-Noto'
 
                         >
                             <Link href={`/blogs/${blog.attributes.slug}`}>

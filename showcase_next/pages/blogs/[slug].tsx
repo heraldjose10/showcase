@@ -18,14 +18,14 @@ const BlogPage = ({ blog }) => {
                 exit={{ opacity: 0 }}
                 className='max-w-2xl mx-5 my-8'
             >
-                <h1 className='text-5xl font-bold my-5'>
+                <h1 className='text-5xl font-bold my-5 font-Fjalla'>
                     {blog.attributes.title}
                 </h1>
-                <div className='my-3'>
+                <div className='my-3 font-Noto'>
                     <p>{moment(blog.attributes.published_at).format('MMMM Do YYYY')}</p>
                     <p className='italic'>{blog.attributes.description}</p>
                 </div>
-                <ReactMarkdown className='unreset' children={blog.attributes.content} />
+                <ReactMarkdown className='unreset font-Noto' children={blog.attributes.content} />
             </motion.article>
         </Layout>
     )

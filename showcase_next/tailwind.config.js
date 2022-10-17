@@ -8,6 +8,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        Anton: ['Anton'],
+        Noto: ['Noto Sans Warang Citi'],
+        Fjalla: ['Fjalla One'],
+        DMSerif: ['DM Serif Text']
+      },
       keyframes: {
         reveal: {
           '0%': { width: '0%' },

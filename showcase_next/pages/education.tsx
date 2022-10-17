@@ -78,9 +78,9 @@ const Education = () => {
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
                                         >
-                                            <h1 className="font-bold text-2xl">{edu.name}</h1>
-                                            <p>{`${edu.start.toUpperCase()} - ${edu.end.toUpperCase()}`}</p>
-                                            <p className="font-semibold">{edu.degree}</p>
+                                            <h1 className="font-bold text-2xl font-Fjalla">{edu.name}</h1>
+                                            <p className="font-Noto">{`${edu.start.toUpperCase()} - ${edu.end.toUpperCase()}`}</p>
+                                            <p className="font-semibold font-Noto">{edu.degree}</p>
                                             <a
                                                 className="grow-0 md:h-5 md:w-5 mt-2 hover:cursor-pointer max-w-full"
                                                 onClick={() => {

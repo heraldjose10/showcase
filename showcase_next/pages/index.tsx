@@ -70,7 +70,7 @@ const IndexPage = () => {
           variants={container}
           initial='hidden'
           animate='show'
-          className='flex min-h-full lg:gap-10 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold'
+          className='flex min-h-full lg:gap-10 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold font-Anton'
           onWheel={handleScroll}
           {...swipeHandlers}
           ref={refPassthrough}

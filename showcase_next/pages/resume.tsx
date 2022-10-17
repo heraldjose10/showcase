@@ -15,7 +15,7 @@ const Resume = () => {
                 initial={{ opacity: 0, y: '200px' }}
                 animate={{ opacity: 1, y: '0px' }}
                 exit={{ opacity: 0, y: '200px' }}
-                className='flex flex-col md:flex-row gap-10 md:gap-20 w-[1150px] grow-0 mx-auto mt-[100px] px-8'
+                className='flex flex-col md:flex-row gap-10 md:gap-20 max-w-5xl grow-0 mx-auto mt-28 px-8'
             >
                 {/* left */}
                 <div className='basis-4/6'>

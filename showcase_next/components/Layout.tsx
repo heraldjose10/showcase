@@ -117,7 +117,7 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
         </nav>
         {/* https://codesandbox.io/s/simple-framer-motion-animation-with-styled-components-with-children-8nryz?from-embed=&file=/src/components/List/styles.ts */}
         <motion.ul
-          className={`font-Noto absolute opacity-0 z-0 top-0 left-0 flex-col items-center justify-center h-screen w-[100vw] bg-black text-white text-3xl gap-10 flex lg:hidden`}
+          className={`font-Noto absolute opacity-0 z-0 top-0 left-0 flex-col items-center justify-center h-screen w-screen bg-black text-white text-3xl gap-10 flex lg:hidden`}
           animate={menuOpen ? 'visible' : 'hidden'}
           variants={listVariants}
         >
@@ -142,8 +142,8 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
       </div>
 
       {/* footer */}
-      <footer className='pr-5 pl-10 flex justify-end py-8 relative min-h-[152px] font-Noto'>
-        <div className='md:flex hover:cursor-pointer p-8 pr-0 sm:pr-8 md:hover:-translate-y-8 md:hover:pt-0 transition group'>
+      <footer className='pr-5 pl-10 flex justify-end py-8 relative min-h-[152px] font-Noto hover:mt-8 pointer-events-none'>
+        <div className='md:flex hover:cursor-pointer p-8 pr-0 sm:pr-8 md:hover:-translate-y-8 md:hover:pt-0 transition group pointer-events-auto'>
           <span className='hidden md:flex'>Follow me</span>
           <ul className='md:hidden flex gap-4 font-semibold md:group-hover:flex md:group-hover:opacity-100 md:absolute md:right-8 md:top-10'>
             <li>

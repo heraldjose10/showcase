@@ -31,12 +31,12 @@ const Education = () => {
 
     const item = {
         'start': {
-            y: '-200px',
+            y: -200,
             opacity: 0
         },
         'final': {
             opacity: 1,
-            y: '0px'
+            y: 0
         }
     }
 
@@ -47,7 +47,7 @@ const Education = () => {
                 initial='start'
                 animate='final'
                 exit='exit'
-                className="flex max-w-[100vw] gap-6 pt-6 items-center"
+                className="flex max-w-[100vw] gap-6 pt-6 items-center px-5"
             >
                 {
                     educationDetails.map(edu => (
@@ -61,20 +61,22 @@ const Education = () => {
                                 animate={{
                                     x: selected && selectedId === edu.id ? animateX : 0,
                                 }}
-                                className={`relative h-[70vh] w-[40vw] md:w-[30vw] lg:w-[20vw] ${selected && selectedId !== edu.id ? 'hidden' : ''}`}
+                                className={`relative h-[60vh] w-[35vw] md:w-[30vw] lg:w-[20vw] ${selected && selectedId !== edu.id ? 'hidden' : ''}`}
                                 key={edu.id}
                             >
                                 <Image
                                     className="object-cover"
                                     src={edu.image}
-                                    layout='fill'
+                                    layout='intrinsic'
+                                    height={600}
+                                    width={300}
                                 />
                             </motion.div>
                             {
                                 selected && selectedId === edu.id ? (
                                     (
                                         <motion.div
-                                            className="w-[150px] md:w-[400px] flex flex-col"
+                                            className="w-36 md:w-96 flex flex-col"
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
                                         >

@@ -36,14 +36,14 @@ const Gallery = ({ images }) => {
                 initial='hidden'
                 animate='show'
                 exit='exit'
-                className="flex flex-wrap gap-2 justify-center content-start my-auto py-10 w-full max-w-[900px] md:gap-3"
+                className="flex flex-wrap gap-2 justify-center content-start my-auto py-10 w-full max-w-xs sm:max-w-xl md:max-w-4xl md:gap-3"
             >
                 {
                     images.map(image => {
                         return (
                             <motion.div
                                 variants={item}
-                                className="relative w-[calc(50vw-4px)] h-[calc(50vw-4px)] md:w-[270px] md:h-[270px] md:border-black md:border-2"
+                                className="relative w-36 h-36 sm:w-64 sm:h-64 md:w-64 md:h-64 md:border-black md:border-2"
                                 key={image.id}
                             >
                                 <Image

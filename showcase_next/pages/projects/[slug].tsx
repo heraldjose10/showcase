@@ -53,6 +53,7 @@ const Project = () => {
                                 {project.title}
                             </h1>
 
+                            {/* slider for mobile phones */}
                             <div className="w-[88vw] py-10 sm:hidden">
                                 <Slider {...settings}>
                                     {
@@ -93,7 +94,8 @@ const Project = () => {
                                     }
                                 </ul>
                             </section>
-
+                            
+                            {/* Masonry layout for large displays */}
                             <MasonryLayout columns={3} gap={50}>
                                 {
                                     project.images.map((image, index) => (

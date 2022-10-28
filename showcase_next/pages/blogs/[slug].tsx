@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import moment from 'moment'
 import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
@@ -5,6 +6,36 @@ import Layout from "../../components/Layout"
 import { fetchAPI } from "../../lib/api"
 
 const BlogPage = ({ blog }) => {
+
+    // https://amirardalan.com/blog/use-next-image-with-react-markdown
+    // replace images in md with next/image
+    const MarkdownComponents: object = {
+        p: paragraph => {
+            const { node } = paragraph
+
+            if (node.children[0].tagName === "img") {
+                const image = node.children[0]
+                const metastring = image.properties.alt
+                const alt = metastring?.replace(/ *\{[^)]*\} */g, "")
+                const metaWidth = metastring.match(/{([^}]+)x/)
+                const metaHeight = metastring.match(/x([^}]+)}/)
+                const width = metaWidth ? metaWidth[1] : "768"
+                const height = metaHeight ? metaHeight[1] : "432"
+
+                return (
+                    <Image
+                        src={image.properties.src}
+                        width={width}
+                        height={height}
+                        alt={image.properties.alt}
+                        className='object-contain'
+                    />
+                )
+            }
+            return <p>{paragraph.children}</p>
+        },
+    }
+
 
     return (
         <Layout>
@@ -25,7 +56,11 @@ const BlogPage = ({ blog }) => {
                     <p>{moment(blog.attributes.published_at).format('MMMM Do YYYY')}</p>
                     <p className='italic'>{blog.attributes.description}</p>
                 </div>
-                <ReactMarkdown className='unreset font-Noto' children={blog.attributes.content} />
+                <ReactMarkdown
+                    components={MarkdownComponents}
+                    className='unreset font-Noto'
+                    children={blog.attributes.content}
+                />
             </motion.article>
         </Layout>
     )

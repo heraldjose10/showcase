@@ -7,6 +7,7 @@ const ContactPage = () => (
     <Layout>
         <Head>
             <meta property="og:description" content={'Showcase | Contact'} />
+            <meta name="description" content={'Showcase | Contact'} />
             <meta property="twitter:description" content={'Showcase | Contact'} />
         </Head>
         <motion.div

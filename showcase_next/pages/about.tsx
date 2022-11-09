@@ -7,6 +7,7 @@ const AboutPage = () => (
   <Layout title="About Me">
     <Head>
       <meta property="og:description" content={'Showcase | About Me'} />
+      <meta name="description" content={'Showcase | About Me'} />
       <meta property="twitter:description" content={'Showcase | About Me'} />
     </Head>
     <motion.div

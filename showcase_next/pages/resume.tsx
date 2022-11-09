@@ -14,6 +14,7 @@ const Resume = () => {
         <Layout>
             <Head>
                 <meta property="og:description" content={'Showcase | Resume'} />
+                <meta name="description" content={'Showcase | Resume'} />
                 <meta property="twitter:description" content={'Showcase | Resume'} />
             </Head>
             <motion.div

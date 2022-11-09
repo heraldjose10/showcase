@@ -34,6 +34,7 @@ const Gallery = ({ images }) => {
         <Layout>
             <Head>
                 <meta property="og:description" content={'Showcase | Gallery'} />
+                <meta name="description" content={'Showcase | Gallery'} />
                 <meta property="twitter:description" content={'Showcase | Gallery'} />
             </Head>
             <motion.div
@@ -52,6 +53,7 @@ const Gallery = ({ images }) => {
                                 key={image.id}
                             >
                                 <Image
+                                    alt={image.attributes.title}
                                     src={
                                         image.attributes.image.data.attributes.formats.medium ? image.attributes.image.data.attributes.formats.medium.url : image.attributes.image.data.attributes.formats.small.url
                                     }

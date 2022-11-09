@@ -75,6 +75,7 @@ const Layout = ({ children, title = 'Heralds Showcase' }: Props) => {
         <meta property="og:title" content={title} />
         <meta property="twitter:domain" content="heraldjose.me" />
         <meta name="twitter:title" content={title} />
+        <meta name='twitter:image' content='/thumbnail.png' />
         <meta property="og:image" content="/thumbnail.png" />
         <link rel="icon" href="favicon.ico" />
         <meta charSet="utf-8" />
@@ -98,6 +99,7 @@ const Layout = ({ children, title = 'Heralds Showcase' }: Props) => {
         <button
           className='lg:hidden flex flex-col justify-center'
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label='open menu'
         >
           {
             menuOpen

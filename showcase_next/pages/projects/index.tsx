@@ -13,6 +13,7 @@ const Projects = () => {
         <Layout>
             <Head>
                 <meta property="og:description" content={'Showcase | Projects'} />
+                <meta name="description" content={'Showcase | Projects'} />
                 <meta property="twitter:description" content={'Showcase | Projects'} />
             </Head>
             <motion.div

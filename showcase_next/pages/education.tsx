@@ -45,6 +45,7 @@ const Education = () => {
         <Layout>
             <Head>
                 <meta property="og:description" content={'Showcase | Education'} />
+                <meta name="description" content={'Showcase | Education'} />
                 <meta property="twitter:description" content={'Showcase | Education'} />
             </Head>
             <motion.section

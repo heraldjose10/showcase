@@ -7,7 +7,8 @@ import Layout from "../../components/Layout"
 import { fetchAPI } from "../../lib/api"
 
 const BlogPage = ({ blog }) => {
-
+    console.log(blog);
+    
     // https://amirardalan.com/blog/use-next-image-with-react-markdown
     // replace images in md with next/image
     const MarkdownComponents: object = {
@@ -43,6 +44,9 @@ const BlogPage = ({ blog }) => {
             <Head>
                 <meta property="og:description" content={blog.attributes.description} />
                 <meta property="og:title" content={blog.attributes.title} />
+                <meta name="description" content={blog.attributes.description} />
+                <meta property="og:image" content={blog.attributes.thumbnail.data.attributes.formats.small.url} />
+                <meta name='twitter:image' content={blog.attributes.thumbnail.data.attributes.formats.small.url} />
                 <meta property="twitter:title" content={blog.attributes.title} />
                 <meta property="twitter:description" content={blog.attributes.description} />
             </Head>
@@ -59,7 +63,7 @@ const BlogPage = ({ blog }) => {
                 <h1 className='text-5xl font-bold my-5 font-Fjalla'>
                     {blog.attributes.title}
                 </h1>
-                <div className='my-3 font-Noto'>
+                <div className='mt-3 mb-16 font-Noto'>
                     <p>{moment(blog.attributes.published_at).format('MMMM Do YYYY')}</p>
                     <p className='italic'>{blog.attributes.description}</p>
                 </div>
@@ -90,9 +94,12 @@ export async function getStaticProps({ params }) {
     const response = await fetchAPI(
         '/blogs',
         {
+            populate: '*',
             filters: { slug: params.slug }
         }
     )
+    console.log(response.data);
+    
     return {
         props: { blog: response.data[0] }
     }

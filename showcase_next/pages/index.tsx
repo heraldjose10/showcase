@@ -60,6 +60,7 @@ const IndexPage = () => {
   return (
     <Layout >
       <Head>
+        <meta name="description" content="A mininal portfolio of a self-taught developer." />
         <meta property="og:description" content={'A mininal portfolio of a self-taught developer.'} />
         <meta name="twitter:description" content={'A mininal portfolio of a self-taught developer.'} />
       </Head>

@@ -42,11 +42,11 @@ const BlogPage = ({ blog }) => {
         <Layout>
             <Head>
                 <meta property="og:description" content={blog.attributes.description} />
-                <meta property="og:title" content={blog.attributes.title} />
+                <meta property="og:title" content={blog.attributes.title} key='title' />
                 <meta name="description" content={blog.attributes.description} />
-                <meta property="og:image" content={blog.attributes.thumbnail.data.attributes.formats.small.url} />
-                <meta name='twitter:image' content={blog.attributes.thumbnail.data.attributes.formats.small.url} />
-                <meta property="twitter:title" content={blog.attributes.title} />
+                <meta property="og:image" content={blog.attributes.thumbnail.data.attributes.formats.small.url} key='image' />
+                <meta name='twitter:image' content={blog.attributes.thumbnail.data.attributes.formats.small.url} key='twitter-image' />
+                <meta property="twitter:title" content={blog.attributes.title} key='twitter-title' />
                 <meta property="twitter:description" content={blog.attributes.description} />
             </Head>
             <motion.article

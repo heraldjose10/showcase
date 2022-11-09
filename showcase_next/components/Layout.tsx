@@ -72,12 +72,12 @@ const Layout = ({ children, title = 'Heralds Showcase' }: Props) => {
     <div className={`min-h-screen flex flex-col ${menuOpen ? 'max-h-screen overflow-hidden' : ''}`} onMouseMove={handleMouseMovement}>
       <Head>
         <title>{title}</title>
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content={title} key='title' />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="heraldjose.me" />
-        <meta name="twitter:title" content={title} />
-        <meta name='twitter:image' content='/thumbnail.png' />
-        <meta property="og:image" content="/thumbnail.png" />
+        <meta name="twitter:title" content={title} key='twitter-title' />
+        <meta name='twitter:image' content='/thumbnail.png' key='twitter-image' />
+        <meta property="og:image" content="/thumbnail.png" key='image' />
         <link rel="icon" href="favicon.ico" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

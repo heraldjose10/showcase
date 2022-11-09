@@ -73,6 +73,7 @@ const Layout = ({ children, title = 'Heralds Showcase' }: Props) => {
       <Head>
         <title>{title}</title>
         <meta property="og:title" content={title} />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="heraldjose.me" />
         <meta name="twitter:title" content={title} />
         <meta name='twitter:image' content='/thumbnail.png' />

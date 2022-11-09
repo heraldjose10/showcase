@@ -7,7 +7,6 @@ import Layout from "../../components/Layout"
 import { fetchAPI } from "../../lib/api"
 
 const BlogPage = ({ blog }) => {
-    console.log(blog);
     
     // https://amirardalan.com/blog/use-next-image-with-react-markdown
     // replace images in md with next/image
@@ -98,7 +97,6 @@ export async function getStaticProps({ params }) {
             filters: { slug: params.slug }
         }
     )
-    console.log(response.data);
     
     return {
         props: { blog: response.data[0] }

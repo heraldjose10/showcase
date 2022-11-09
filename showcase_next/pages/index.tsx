@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Head from 'next/head'
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import { useSwipeable } from 'react-swipeable'
@@ -58,6 +59,9 @@ const IndexPage = () => {
 
   return (
     <Layout >
+      <Head>
+        <meta property="og:description" content={'A mininal portfolio of a self-taught developer.'} />
+      </Head>
       <motion.div
         className='grow min-h-full overflow-x-scroll scrollbar-hide transition duration-500'
         ref={containerToScroll}

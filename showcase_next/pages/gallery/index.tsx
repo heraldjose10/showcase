@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Head from "next/head";
 import { motion } from 'framer-motion'
 import Layout from "../../components/Layout"
 import { fetchAPI } from "../../lib/api"
@@ -31,6 +32,9 @@ const Gallery = ({ images }) => {
 
     return (
         <Layout>
+            <Head>
+                <meta property="og:description" content={'Showcase | Gallery'} />
+            </Head>
             <motion.div
                 variants={container}
                 initial='hidden'

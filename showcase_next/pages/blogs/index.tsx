@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Head from "next/head";
 import { motion } from "framer-motion";
 import Layout from "../../components/Layout";
 
@@ -26,6 +27,9 @@ const BlogsPage = ({ blogs }) => {
 
     return (
         <Layout>
+            <Head>
+                <meta property="og:description" content={'Showcase | Blogs'} />
+            </Head>
             <motion.ul
                 className="max-w-2xl mx-5 my-10"
                 variants={container}

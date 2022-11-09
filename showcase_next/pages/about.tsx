@@ -1,9 +1,13 @@
+import Head from 'next/head'
 import { motion } from 'framer-motion'
 
 import Layout from '../components/Layout'
 
 const AboutPage = () => (
   <Layout title="About Me">
+    <Head>
+      <meta property="og:description" content={'Showcase | About Me'} />
+    </Head>
     <motion.div
       className='max-w-screen-lg grow-0 mx-auto mt-28 px-10'
       initial={{ opacity: 0, y: '100%' }}

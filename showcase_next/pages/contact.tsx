@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 import Layout from "../components/Layout";
 
 const ContactPage = () => (
     <Layout>
+        <Head>
+            <meta property="og:description" content={'Showcase | Contact'} />
+        </Head>
         <motion.div
             className='max-w-screen-lg grow-0 mx-auto mt-28 px-10 flex flex-col gap-20'
             initial={{ opacity: 0, y: '100%' }}

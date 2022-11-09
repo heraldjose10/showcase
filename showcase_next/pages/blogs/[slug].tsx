@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Head from 'next/head';
 import moment from 'moment'
 import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
@@ -39,6 +40,9 @@ const BlogPage = ({ blog }) => {
 
     return (
         <Layout>
+            <Head>
+                <meta property="og:description" content={blog.attributes.description} />
+            </Head>
             <motion.article
                 initial={{ opacity: 0, y: '100vh' }}
                 animate={{

@@ -1,4 +1,5 @@
 import Layout from '../components/Layout'
+import Head from 'next/head';
 import { motion } from 'framer-motion';
 import List from '../components/List';
 import ResumeEducationCard from '../components/ResumeEducationCard';
@@ -11,6 +12,9 @@ const Resume = () => {
 
     return (
         <Layout>
+            <Head>
+                <meta property="og:description" content={'Showcase | Resume'} />
+            </Head>
             <motion.div
                 initial={{ opacity: 0, y: '200px' }}
                 animate={{ opacity: 1, y: '0px' }}

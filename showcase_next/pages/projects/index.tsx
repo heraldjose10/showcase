@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Head from "next/head"
 import { motion } from "framer-motion"
 import Layout from "../../components/Layout"
 
@@ -10,6 +11,9 @@ import { ProjectCard } from "../../components/ProjectCard"
 const Projects = () => {
     return (
         <Layout>
+            <Head>
+                <meta property="og:description" content={'Showcase | Projects'} />
+            </Head>
             <motion.div
                 initial={{ opacity: 0, y: '100%' }}
                 animate={{ opacity: 1, y: 0 }}

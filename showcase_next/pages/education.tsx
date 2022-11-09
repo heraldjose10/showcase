@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Head from "next/head"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { IoMdArrowRoundBack } from 'react-icons/io'
@@ -42,6 +43,9 @@ const Education = () => {
 
     return (
         <Layout>
+            <Head>
+                <meta property="og:description" content={'Showcase | Education'} />
+            </Head>
             <motion.section
                 variants={container}
                 initial='start'

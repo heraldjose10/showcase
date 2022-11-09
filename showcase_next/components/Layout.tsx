@@ -10,7 +10,7 @@ type Props = {
   title?: string
 }
 
-const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
+const Layout = ({ children, title = 'Heralds Showcase' }: Props) => {
 
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -72,6 +72,7 @@ const Layout = ({ children, title = 'Herald\'s Showcase' }: Props) => {
     <div className={`min-h-screen flex flex-col ${menuOpen?'max-h-screen overflow-hidden':''}`} onMouseMove={handleMouseMovement}>
       <Head>
         <title>{title}</title>
+        <meta property="og:title" content={title} />
         <link rel="icon" href="favicon.ico" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

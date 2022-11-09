@@ -1,7 +1,8 @@
 import React from "react"
+import Head from "next/head"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { useRouter } from "next/router"
-import Image from "next/image"
 
 import Layout from "../../components/Layout"
 
@@ -20,6 +21,9 @@ const Project = () => {
 
     return (
         <Layout>
+            <Head>
+                <meta property="og:description" content={'Showcase | Projects'} />
+            </Head>
             {
                 project
                     ? (

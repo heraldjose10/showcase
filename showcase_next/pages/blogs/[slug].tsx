@@ -42,6 +42,9 @@ const BlogPage = ({ blog }) => {
         <Layout>
             <Head>
                 <meta property="og:description" content={blog.attributes.description} />
+                <meta property="og:title" content={blog.attributes.title} />
+                <meta property="twitter:title" content={blog.attributes.title} />
+                <meta property="twitter:description" content={blog.attributes.description} />
             </Head>
             <motion.article
                 initial={{ opacity: 0, y: '100vh' }}

@@ -14,7 +14,7 @@ const Layout = ({ children, title = 'Heralds Showcase' }: Props) => {
 
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const handleMouseMovement = (e) => {    
+  const handleMouseMovement = (e) => {
     if (e.target.tagName == 'A') {
       cursor.current.style.height = '60px'
       cursor.current.style.width = '60px'
@@ -69,10 +69,13 @@ const Layout = ({ children, title = 'Heralds Showcase' }: Props) => {
   }
 
   return (
-    <div className={`min-h-screen flex flex-col ${menuOpen?'max-h-screen overflow-hidden':''}`} onMouseMove={handleMouseMovement}>
+    <div className={`min-h-screen flex flex-col ${menuOpen ? 'max-h-screen overflow-hidden' : ''}`} onMouseMove={handleMouseMovement}>
       <Head>
         <title>{title}</title>
         <meta property="og:title" content={title} />
+        <meta property="twitter:domain" content="heraldjose.me" />
+        <meta name="twitter:title" content={title} />
+        <meta property="og:image" content="/thumbnail.png" />
         <link rel="icon" href="favicon.ico" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

@@ -29,6 +29,7 @@ const BlogsPage = ({ blogs }) => {
         <Layout>
             <Head>
                 <meta property="og:description" content={'Showcase | Blogs'} />
+                <meta property="twitter:description" content={'Showcase | Blogs'} />
             </Head>
             <motion.ul
                 className="max-w-2xl mx-5 my-10"

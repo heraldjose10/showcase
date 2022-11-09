@@ -34,6 +34,7 @@ const Gallery = ({ images }) => {
         <Layout>
             <Head>
                 <meta property="og:description" content={'Showcase | Gallery'} />
+                <meta property="twitter:description" content={'Showcase | Gallery'} />
             </Head>
             <motion.div
                 variants={container}

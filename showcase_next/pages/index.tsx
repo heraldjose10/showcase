@@ -61,6 +61,7 @@ const IndexPage = () => {
     <Layout >
       <Head>
         <meta property="og:description" content={'A mininal portfolio of a self-taught developer.'} />
+        <meta name="twitter:description" content={'A mininal portfolio of a self-taught developer.'} />
       </Head>
       <motion.div
         className='grow min-h-full overflow-x-scroll scrollbar-hide transition duration-500'
